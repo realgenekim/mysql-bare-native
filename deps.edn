@@ -1,0 +1,63 @@
+{:paths
+ ["src" "./resources/" "config/dev"]
+ :deps
+ {
+  org.clojure/clojure               {:mvn/version "1.10.3"}
+  org.clojure/core.async            {:mvn/version "1.5.640"}
+  org.clojure/java.jdbc             {:mvn/version "0.7.12"}
+  ;io.quarkus/quarkus-jdbc-mysql {:mvn/version "2.5.0.Final"}
+  ;io.quarkus/quarkus-jdbc-mysql {:mvn/version "1.4.0.Final"}
+  ;io.quarkus/quarkus-jdbc-mysql {:mvn/version "1.13.7.Final"}
+  ;io.quarkus/quarkus-jdbc-mysql {:mvn/version "1.13.7.Final"}
+  ;io.quarkus/quarkus-jdbc-mysql {:mvn/version "2.4.2.Final"}
+  io.quarkus/quarkus-jdbc-mysql {:mvn/version "2.3.1.Final"}
+  mysql/mysql-connector-java        {:mvn/version "8.0.27"}
+  ;korma/korma                       {:mvn/version "0.4.3"}
+  clj-time/clj-time                 {:mvn/version "0.15.2"}
+  yogthos/config                    {:mvn/version "1.1.8"}
+  ; pretty date print, like moments.js
+  org.ocpsoft.prettytime/prettytime {:mvn/version "4.0.1.Final"}
+  ;asinfind/asinfind          {:local/root "../asinfind/"}
+  ;gnl/ghostwheel                    {:mvn/version "0.3.9"}
+  com.fulcrologic/guardrails {:mvn/version "1.1.7"}
+  com.github.seancorfield/honeysql  {:mvn/version "2.1.818"}
+  log4j/log4j                       {:mvn/version "1.2.17"
+                                     :exclusions  [javax.mail/mail
+                                                   javax.jms/jms
+                                                   com.sun.jdmk/jmxtools
+                                                   com.sun.jmx/jmxri]}}
+ :aliases {
+           :test    {:extra-paths ["test"]}
+           :dev     {:extra-paths ["dev" "resources"]
+                     :extra-deps  {org.clojure/tools.namespace         {:mvn/version "1.0.0"}
+                                   djblue/portal                       {:mvn/version "0.18.0"}}}
+           :build   {:deps
+                                 {io.github.clojure/tools.build       {:git/tag "v0.6.6" :git/sha "4d41c26"}
+                                  com.google.cloud.tools/jib-core     {:mvn/version "0.20.0"}}
+                     :ns-default build
+                     :uberjar    {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.0.206"}}
+                                  :exec-fn      hf.depstar/uberjar
+                                  :exec-args    {:aot true}}}
+           :jib-deploy
+                    {:deps
+                                 {io.github.clojure/tools.build       {:git/tag "v0.6.6" :git/sha "4d41c26"}
+                                  com.google.cloud.tools/jib-core     {:mvn/version "0.20.0"}}
+                     :ns-default jib
+                     :uberjar    {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.0.206"}}
+                                  :exec-fn      hf.depstar/uberjar
+                                  :exec-args    {:aot true}}}
+           :uberjar {:jvm-opts ["-Dclojure.compiler.direct-linking=true"]
+                     :replace-deps {com.github.seancorfield/depstar {:mvn/version "2.0.206"}}
+                     :exec-fn      hf.depstar/uberjar
+                     :exec-args    {:aot true}}
+           ;; build a jar (library):
+           :jar     {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.0.206"}}
+                     :exec-fn      hf.depstar/jar
+                     :exec-args    {}}
+           ;; generic depstar alias, use with jar or uberjar function name:
+           :depstar {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.0.206"}}
+                     :ns-default   hf.depstar
+                     :exec-args    {}}}}
+
+
+
