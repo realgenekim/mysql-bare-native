@@ -7,5 +7,5 @@
 
 (defn -main [& args]
   (println "**** in main!")
-  ;(clojure.pprint/pprint (db/get-books))
-  (clojure.pprint/pprint (take 10 (db/get-reviews-rf-all))))
+  (clojure.pprint/pprint (take 10 (db/get-books))))
+  ;(clojure.pprint/pprint (take 10 (db/get-reviews-rf-all))))
