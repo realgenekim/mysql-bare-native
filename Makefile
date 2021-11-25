@@ -13,7 +13,6 @@ native-image:
              -jar ./target/mysql-standalone.jar \
              -H:ReflectionConfigurationFiles=reflect-config.json \
              --allow-incomplete-classpath \
-             -H:+JNI \
              -J-Dclojure.spec.skip-macros=true \
              --initialize-at-run-time=com.mysql.cj.jdbc.AbandonedConnectionCleanupThread \
              --initialize-at-run-time=com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.AbandonedConnectionCleanupThread \
@@ -22,6 +21,7 @@ native-image:
              -H:+ReportExceptionStackTraces \
              --initialize-at-build-time=. \
 
+#              -H:+JNI \
 #              --initialize-at-run-time=org.hibernate.jpa.HibernatePersistenceProvider \
 #              --initialize-at-run-time=org.hibernate.secure.internal.StandardJaccServiceImpl \
 #              --initialize-at-run-time=oracle.jdbc.driver.BlockSource \

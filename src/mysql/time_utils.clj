@@ -1,8 +1,8 @@
 (ns mysql.time-utils
   (:require
     [clj-time.local :as lt]
-    [clj-time.coerce :as c])
-    ;[com.fulcrologic.guardrails.core :refer [>defn >def | ? =>]])
+    [clj-time.coerce :as c]
+    [com.fulcrologic.guardrails.noop :refer [>defn >def | ? =>]])
   (:import
     (org.ocpsoft.prettytime PrettyTime)
     ; old date style
@@ -13,11 +13,11 @@
 
 ;https://github.com/fulcrologic/guardrails/blob/c04b6e5b7ee474b05eea99f482940573277a1118/src/main/com/fulcrologic/guardrails/noop.cljc
 
-(defmacro >defn
-  [& forms]
-  `(defn ~@forms))
-
-(def => :ret)
+;(defmacro >defn
+;  [& forms]
+;  `(defn ~@forms))
+;
+;(def => :ret)
 
 
 ;

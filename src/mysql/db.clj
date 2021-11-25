@@ -18,8 +18,8 @@
     ;[korma.db :as kdb]
     [honey.sql :as hsql]
     [honey.sql.helpers :as hsqlh]
-    [mysql.time-utils :as tu]))
-    ;[com.fulcrologic.guardrails.core :refer [>defn >def | ? =>]]))
+    [mysql.time-utils :as tu]
+    [com.fulcrologic.guardrails.noop :refer [>defn >def | ? =>]]))
     ;[ghostwheel.core :as g
     ; :refer [>defn >defn- >fdef => | <- ?]])
 
