@@ -15,6 +15,11 @@ The following native build image fails -- the error message depends on what vers
 - io.quarkus/quarkus-jdbc-mysql: 2.4.2.final: error message: https://0bin.net/paste/ixPI6-17#T6dT5hWeKj17eJtnNFS69pEIl8t0a8nqAFsB5AdqxpE
 
 
+Attempted to copy reflect.json and --initializate-at-run-time here:
+
+- found list of reflections here: https://github.com/babashka/babashka-sql-pods/blob/master/reflection-mysql.json
+- found list of run-time-initializations: https://github.com/babashka/babashka-sql-pods/blob/b12131df6454df98aafe9e0b0d89e7cb5919bb6a/script/compile
+
 Many thanks!
 
 Gene
