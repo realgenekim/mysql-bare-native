@@ -14,7 +14,7 @@ Attempted to copy reflect.json and --initializate-at-run-time here:
 
 Error messages on native image build:
 
-- https://0bin.net/paste/ZCCZp1jl#Ke3-XsDNiHFGSs47HbNvbTYAjvdYLStao2NvxkzyqMO
+- https://0bin.net/paste/Dgx6LYk7#qLAhqSMSOU8w01mmGvSK8lv1Gy+K5S2ME5gPyrU1fa2
 
 ## Old stuff: Ignore?
 
