@@ -10,7 +10,7 @@
   ;io.quarkus/quarkus-jdbc-mysql {:mvn/version "1.13.7.Final"}
   ;io.quarkus/quarkus-jdbc-mysql {:mvn/version "1.13.7.Final"}
   ;io.quarkus/quarkus-jdbc-mysql {:mvn/version "2.4.2.Final"}
-  io.quarkus/quarkus-jdbc-mysql {:mvn/version "2.3.1.Final"}
+  ;io.quarkus/quarkus-jdbc-mysql {:mvn/version "2.3.1.Final"}
   mysql/mysql-connector-java        {:mvn/version "8.0.27"}
   ;korma/korma                       {:mvn/version "0.4.3"}
   clj-time/clj-time                 {:mvn/version "0.15.2"}
@@ -25,7 +25,8 @@
                                      :exclusions  [javax.mail/mail
                                                    javax.jms/jms
                                                    com.sun.jdmk/jmxtools
-                                                   com.sun.jmx/jmxri]}}
+                                                   com.sun.jmx/jmxri]}
+  com.github.clj-easy/graal-build-time {:mvn/version "0.1.4"}}
  :aliases {
            :test    {:extra-paths ["test"]}
            :dev     {:extra-paths ["dev" "resources"]

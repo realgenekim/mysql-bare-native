@@ -11,7 +11,13 @@ native-image:
 	         --report-unsupported-elements-at-runtime \
 			 --no-fallback \
              -jar ./target/mysql-standalone.jar \
+             -H:ReflectionConfigurationFiles=reflect-config.json \
              --allow-incomplete-classpath \
+             -H:+JNI \
+             --initialize-at-run-time=com.mysql.cj.jdbc.AbandonedConnectionCleanupThread \
+             --initialize-at-run-time=com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.AbandonedConnectionCleanupThread \
+             --initialize-at-run-time=com.mysql.cj.jdbc.Driver \
+             --initialize-at-run-time=com.mysql.cj.jdbc.NonRegisteringDriver \
              -H:+ReportExceptionStackTraces \
              --initialize-at-build-time=. \
 
@@ -38,3 +44,11 @@ native-image:
 # --initialize-at-run-time=com.mysql.cj.jdbc.Driver --initialize-at-run-time=com.mysql.cj.jdbc.AbandonedConnectionCleanupThread --initialize-at-run-time=java.sql.DriverManager \
 
 # https://github.com/babashka/babashka/issues/372
+# found list of reflections here:
+# https://github.com/babashka/babashka-sql-pods/blob/master/reflection-mysql.json
+# list of run-time-initializations:
+# https://github.com/babashka/babashka-sql-pods/blob/b12131df6454df98aafe9e0b0d89e7cb5919bb6a/script/compile
+
+run-uberjar-with-agent:
+# 	java -agentlib:native-image-agent=caller-filter-file=filter.json,config-output-dir=. -cp $(clojure -Spath):classes refl.main
+	java -agentlib:native-image-agent=caller-filter-file=filter.json,config-output-dir=. -jar target/mysql-standalone.jar
