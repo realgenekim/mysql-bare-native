@@ -16,6 +16,8 @@ Error messages on native image build:
 
 - https://0bin.net/paste/ZCCZp1jl#Ke3-XsDNiHFGSs47HbNvbTYAjvdYLStao2NvxkzyqMO
 
+## Old stuff: Ignore?
+
 PS: Just in case if it's helpful, here are some older error messages: (I started using io.quarkus/quarkus-jdbc-mysql in addition to mysql/mysql-connector-java after reading your post here: https://github.com/babashka/babashka/issues/372)
 
 - no io.quarkus/quarkus-jdbc-mysql: https://0bin.net/paste/d7dek4bF#6ATWykAyyeyccQtfqC2-QjRt/sKTQs7zWneF8xTeROw
