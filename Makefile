@@ -14,6 +14,7 @@ native-image:
              -H:ReflectionConfigurationFiles=reflect-config.json \
              --allow-incomplete-classpath \
              -H:+JNI \
+             -J-Dclojure.spec.skip-macros=true \
              --initialize-at-run-time=com.mysql.cj.jdbc.AbandonedConnectionCleanupThread \
              --initialize-at-run-time=com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.AbandonedConnectionCleanupThread \
              --initialize-at-run-time=com.mysql.cj.jdbc.Driver \

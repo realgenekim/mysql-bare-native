@@ -19,7 +19,7 @@
   org.ocpsoft.prettytime/prettytime {:mvn/version "4.0.1.Final"}
   ;asinfind/asinfind          {:local/root "../asinfind/"}
   ;gnl/ghostwheel                    {:mvn/version "0.3.9"}
-  com.fulcrologic/guardrails {:mvn/version "1.1.7"}
+  ;com.fulcrologic/guardrails {:mvn/version "1.1.7"}
   com.github.seancorfield/honeysql  {:mvn/version "2.1.818"}
   log4j/log4j                       {:mvn/version "1.2.17"
                                      :exclusions  [javax.mail/mail

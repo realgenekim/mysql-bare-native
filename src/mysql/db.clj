@@ -13,13 +13,13 @@
     [clj-time.core :as t]
     [clj-time.format :as f]
     [clj-time.coerce :as tc]
-    [expound.alpha :as expound]
+    ;[expound.alpha :as expound]
     ;[korma.core :as k]
     ;[korma.db :as kdb]
     [honey.sql :as hsql]
     [honey.sql.helpers :as hsqlh]
-    [mysql.time-utils :as tu]
-    [com.fulcrologic.guardrails.core :refer [>defn >def | ? =>]]))
+    [mysql.time-utils :as tu]))
+    ;[com.fulcrologic.guardrails.core :refer [>defn >def | ? =>]]))
     ;[ghostwheel.core :as g
     ; :refer [>defn >defn- >fdef => | <- ?]])
 

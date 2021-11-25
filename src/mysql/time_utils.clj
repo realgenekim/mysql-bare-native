@@ -1,8 +1,8 @@
 (ns mysql.time-utils
   (:require
     [clj-time.local :as lt]
-    [clj-time.coerce :as c]
-    [com.fulcrologic.guardrails.core :refer [>defn >def | ? =>]])
+    [clj-time.coerce :as c])
+    ;[com.fulcrologic.guardrails.core :refer [>defn >def | ? =>]])
   (:import
     (org.ocpsoft.prettytime PrettyTime)
     ; old date style
@@ -10,6 +10,14 @@
     (java.time.temporal ChronoUnit)
     (java.time LocalDateTime)
     (org.joda.time Duration)))
+
+;https://github.com/fulcrologic/guardrails/blob/c04b6e5b7ee474b05eea99f482940573277a1118/src/main/com/fulcrologic/guardrails/noop.cljc
+
+(defmacro >defn
+  [& forms]
+  `(defn ~@forms))
+
+(def => :ret)
 
 
 ;
@@ -99,7 +107,7 @@
 
 (>defn dt-minus-days
   " subtract n number of days "
-  [dt n] [any? long? => any?]
+  [dt n] [any? int? => any?]
   (.minusDays dt n))
 
 (defn dt->millis
